@@ -2,6 +2,7 @@ const express= require('express');
 const fs=require('fs');
 const app=express()
 const hbs= require('hbs');
+const port= process.env.PORT || 3000;
 hbs.registerPartials(__dirname+'/views/partials')
 hbs.registerHelper('currentYear',()=>{ return new Date().getFullYear()})
 hbs.registerHelper('TOUPPER',(text)=>
@@ -41,7 +42,7 @@ app.get('/index',(req,resp)=>
 })
 //End Route
 // starting App;
-app.listen(2000,()=>
+app.listen(port,()=>
 {
     console.log('LOLOLOLOLOL');
 })
